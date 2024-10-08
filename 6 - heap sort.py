@@ -3,7 +3,7 @@ def heapsort(arr):
     n = len(arr)
     for i in range(n-1, 0, -1):
         arr[0], arr[i] = arr[i], arr[0] # arr[0]: 최상단 max node
-        siftdown(0, arr, i)
+        siftdown(0, arr, i) # i : 현재 정렬해야 할 힙의 크기, 매번 가장 큰 값을 배열의 끝으로 보내면서 힙의 크기가 하나씩 감소
     print(arr)
 
 def siftdown(i, arr, n):
