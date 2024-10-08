@@ -10,9 +10,9 @@ def stable_sort_by_digit(arr, k, r):
     rtok = r ** k
 
     for x in arr: # counting
-        cnts[(x//rtok) % r] += 1
+        cnts[(x//rtok) % r] += 1 # (x // rtok) % r : k번째 자릿수를 추출
 
-    for i in range(1, r): # 누적
+    for i in range(1, r): # cumulate
         cnts[i] += cnts[i-1]
     
     sorted = [0] * n
@@ -23,4 +23,4 @@ def stable_sort_by_digit(arr, k, r):
     arr[:] = sorted
 
 
-print(radix_sort([123, 2154, 222, 4, 283, 1560, 1061, 2150], 4, 10 )) # k: 4자리수, r: 기수 radix
+print(radix_sort([123, 2154, 222, 4, 283, 1560, 1061, 2150], 4, 10 )) # k: 최대 4자리수, r: 기수 radix
