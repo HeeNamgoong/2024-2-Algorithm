@@ -5,7 +5,7 @@ matrix = [
     [8,10,14,9,]
 ] 
 
-
+### memoization 재귀 호출 ###
 def matrix_path(matrix):
     n = len(matrix)
     dp = [[0] * n for _ in range(n)]
@@ -21,5 +21,21 @@ def matrix_path(matrix):
         return dp[i][j]
 
     return rec(n-1, n-1)
+
+print(matrix_path(matrix))
+##############################
+
+
+### tabulation 동적 프로그래밍 ###
+
+def matrix_path(matrix):
+    n = len(matrix)
+    dp = [[0] * (n+1) for _ in range(n+1)] # 행렬 범위 벗어나는 index error 방지하기 위해 padding 줌
+
+    for i in range(n):
+        for j in range(n):
+            dp[i][j] = max(dp[i-1][j], dp[i][j-1]) + matrix[i][j]
+
+    return dp[i][j]
 
 print(matrix_path(matrix))
