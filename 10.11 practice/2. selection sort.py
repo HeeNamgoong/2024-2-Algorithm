@@ -1,4 +1,4 @@
-# 최솟값을 찾아 맨 앞으로 보내는
+# 정렬되지 않은 값들 중, 최솟값을 찾아 맨 앞으로 보내는
 arr = [4, 3, 1, 5, 2, 6]
 n = len(arr)
 
@@ -9,5 +9,5 @@ for i in range(n):
         if arr[min_] > arr[j]:
             min_ = j
     arr[min_], arr[i] = arr[i], arr[min_]
-
+    print(arr)
 print(arr)

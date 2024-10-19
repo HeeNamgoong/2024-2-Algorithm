@@ -2,10 +2,8 @@
 def radix_sort(arr, k, r):
     for i in range(k):
         stable_sort_by_digit(arr, i, r)
+        print(arr)
     return arr
-
-    
-
 
 def stable_sort_by_digit(arr, k, r):
     n = len(arr)
@@ -25,6 +23,4 @@ def stable_sort_by_digit(arr, k, r):
 
     arr[:] = sorted
 
-
-
-print(radix_sort([123, 2154, 222, 4, 283, 1560, 1061, 2150], 4, 10))
+print(radix_sort([123, 2154, 222, 4, 283, 2150, 1560], 4, 10)) # k:최대 자릿수
